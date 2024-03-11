@@ -11,7 +11,8 @@
     "test-case5": "jest -t 'case5'",
     "test-case6": "jest -t 'case6'",
     "test-case7": "jest -t 'case7'",
-    "test-case8": "jest -t 'case8'"
+    "test-case8": "jest -t 'case8'",
+    "test-case9": "jest -t 'case9'"
   },
   "author": "Brian Koehler",
   "license": "MIT",

@@ -139,4 +139,30 @@ describe('all tests', () => {
     value = await page.evaluate((el) => el.innerText, element);
     expect(value).toBe('$11.97');
   });
+
+  it('case9', async () => {
+    await page.select('#quantity', '2');
+    await page.select('#size', 'Grande (473ml)');
+    await page.select('#description', 'Earl Grey Tea');
+    await page.click('#addItem');
+    await page.select('#quantity', '3');
+    await page.select('#size', 'Grande (473ml)');
+    await page.select('#description', 'Earl Grey Tea');
+    await page.click('#addItem');
+    await page.waitForSelector('#totalCost');
+
+    let element = await page.$('tbody tr:first-of-type td:first-of-type');
+    let value = await page.evaluate((el) => el.innerText, element);
+    expect(value).toBe('5');
+    element = await page.$('tbody tr:first-of-type td:nth-of-type(2)');
+    value = await page.evaluate((el) => el.innerText, element);
+    expect(value).toBe('Grande (473ml)');
+    element = await page.$('tbody tr:first-of-type td:nth-of-type(3)');
+    value = await page.evaluate((el) => el.innerText, element);
+    expect(value).toBe('Earl Grey Tea');
+
+    element = await page.$('#totalCost');
+    value = await page.evaluate((el) => el.innerText, element);
+    expect(value).toBe('$16.25');
+  });
 });
