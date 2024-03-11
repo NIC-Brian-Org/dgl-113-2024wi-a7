@@ -1,7 +1,7 @@
 {
   "name": "dgl-113-2024wi-a7",
   "version": "1.0.0",
-  "description": "DGL 113 2024WI Assignment #6",
+  "description": "DGL 113 2024WI Assignment #7",
   "scripts": {
     "test": "jest",
     "test-case1": "jest -t 'case1'",
